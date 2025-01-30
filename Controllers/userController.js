@@ -48,7 +48,7 @@ const Login = async (req, res) => {
             const token = jwt.sign({ id: user._id }, process.env.SECRET, { expiresIn: '12h' });
 
             // Set the token in the cookies
-            res.cookie('token', token, { httpOnly: true });
+            res.cookie('token', token, { httpOnly: true, secure:true,sameSite:'none'  });
 
             return res.status(200).json({
                 user: user,
@@ -95,9 +95,9 @@ const Register = async(req,res) =>
 
         await newUser.save()
 
-        const token = jwt.sign({id:newUser._id},process.env.SECRET,{expiresIn:"12h"})
+        const token = jwt.sign({id:newUser._id},process.env.SECRET,{expiresIn:"24h"})
 
-        res.cookie('token',token, { httpOnly: true })
+        res.cookie('token',token, { httpOnly: true , secure:true,sameSite:'none' })
 
         return res.status(200).json({
             user:newUser,
