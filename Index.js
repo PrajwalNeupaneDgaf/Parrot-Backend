@@ -26,7 +26,7 @@ app.use(expressfileUpload({
 }))
 
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://www.localhost:5173',env.process.FRONTENDURL], 
+    origin: ['http://localhost:5173', 'http://www.localhost:5173',process.env.FRONTENDURL], 
     credentials: true, // Allow cookies and credentials
 }));
 
