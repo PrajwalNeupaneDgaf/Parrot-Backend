@@ -15,7 +15,6 @@ const Auth = async (req, res, next) => {
         req.user = data;
         next();
     } catch (error) {
-        res.clearCookie('token');
         const message =
             error.name === 'TokenExpiredError'
                 ? 'Token has expired. Please login again.'
