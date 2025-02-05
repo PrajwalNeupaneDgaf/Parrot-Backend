@@ -26,7 +26,7 @@ app.use(expressfileUpload({
 }))
 
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://www.localhost:5173',"https://parrotp1.netlify.app"], 
+    origin: ['http://localhost:5173', 'http://www.localhost:5173',"https://parrotp1.netlify.app","https://github.com"], 
     credentials: true, // Allow cookies and credentials
 }));
 
